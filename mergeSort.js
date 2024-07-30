@@ -32,9 +32,7 @@ const mergeSort = function(arr) {
     } else {
         const mid = Math.floor(arr.length / 2);
         const sortedLeft = mergeSort(arr.slice(0, mid));
-        console.log(sortedLeft);
         const sortedRight = mergeSort(arr.slice(mid, arr.length));
-        console.log(sortedRight);
         return merge(sortedLeft, sortedRight);
     }
 };
