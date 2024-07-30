@@ -17,17 +17,24 @@ const merge = function (arr1, arr2) {
     for (; i < arr1.length; i++) {
         finalArr[k] = arr1[i];
         k++;
-        i++;
     }
     for (; j < arr2.length; j++) {
         finalArr[k] = arr2[j];
         k++;
-        j++;
     }
     return finalArr;
 }
 
-let arr1 = [2, 6, 9, 11, 13];
-let arr2 = [0, 1, 3, 7, 8];
 
-console.log(merge(arr1, arr2));
+const mergeSort = function(arr) {
+    if (arr.length === 1) {
+        return arr;
+    } else {
+        const mid = Math.floor(arr.length / 2);
+        const sortedLeft = mergeSort(arr.slice(0, mid));
+        console.log(sortedLeft);
+        const sortedRight = mergeSort(arr.slice(mid, arr.length));
+        console.log(sortedRight);
+        return merge(sortedLeft, sortedRight);
+    }
+};
